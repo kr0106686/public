@@ -11,5 +11,5 @@ func (f *Filer) ReadHtmlTmpl(w http.ResponseWriter, name string, data map[string
 	filePath := path.Join(f.pagePath, fileName)
 
 	f.layoutTmpl.ParseFiles(filePath)
-	return f.layoutTmpl.Execute(w, data)
+	return f.layoutTmpl.ExecuteTemplate(w, "layout", data)
 }
