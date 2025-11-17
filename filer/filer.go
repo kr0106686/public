@@ -4,16 +4,17 @@ const (
 	pagePath   = "/templates/page"
 	layoutPath = "/templates/layout/*.html"
 	docsPath   = "/docs"
-	staticPath = "/static"
 )
 
 type Filer struct {
 	pagePath   string
 	layoutPath string
+	docsPath   string
 }
 
-func New() *Filer {
+func New() Interface {
 	return &Filer{
+		docsPath:   docsPath,
 		pagePath:   pagePath,
 		layoutPath: layoutPath,
 	}
